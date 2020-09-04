@@ -17,13 +17,16 @@ jobs:
 
     - name: Init
       run: |
-        chmod -R 777 IBM_Cloud_CLI/
-        IBM_Cloud_CLI/ibmcloud cf install
+        curl -L "https://packages.cloudfoundry.org/stable?release=linux64-binary&source=github&version=v6" | tar -zx
+        sudo mv cf /usr/local/bin
+        
+        # chmod -R 777 IBM_Cloud_CLI/
+        # IBM_Cloud_CLI/ibmcloud cf install
 
     - name: Login IBM CF
       run: cf l -a https://api.${{ secrets.REGION }}.cf.cloud.ibm.com login -u ${{ secrets.ACCOUNT }} -p ${{ secrets.PWD }}
-      #run: |
-        #IBM_Cloud_CLI/ibmcloud login -u ${{ secrets.ACCOUNT }} -p ${{ secrets.PWD }} -r ${{ secrets.REGION }}
+      # run: |
+        # IBM_Cloud_CLI/ibmcloud login -u ${{ secrets.ACCOUNT }} -p ${{ secrets.PWD }} -r ${{ secrets.REGION }}
 
 
     - name: Restart IBM CF
