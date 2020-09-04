@@ -21,7 +21,7 @@ jobs:
         IBM_Cloud_CLI/ibmcloud cf install
 
     - name: Login IBM CF
-      run: cf l -a https://api.${{ secrets.REGION }}.cf.cloud.ibm.com login -u ${{ secrets.ACCOUT }} -p ${{ secrets.PWD }}
+      run: cf l -a https://api.${{ secrets.REGION }}.cf.cloud.ibm.com login -u ${{ secrets.ACCOUNT }} -p ${{ secrets.PWD }}
       #run: |
         #IBM_Cloud_CLI/ibmcloud login -u ${{ secrets.ACCOUNT }} -p ${{ secrets.PWD }} -r ${{ secrets.REGION }}
 
