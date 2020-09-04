@@ -30,7 +30,9 @@ jobs:
 
 
     - name: Restart IBM CF
-      run: |
-        IBM_Cloud_CLI/ibmcloud target -g Default
-        IBM_Cloud_CLI/ibmcloud target --cf
-        IBM_Cloud_CLI/ibmcloud cf restart ${{ secrets.APP_NAME }}
+      run: cf rs ${{ secrets.APP_NAME }}
+      
+      # run: |
+        # IBM_Cloud_CLI/ibmcloud target -g Default
+        # IBM_Cloud_CLI/ibmcloud target --cf
+        # IBM_Cloud_CLI/ibmcloud cf restart ${{ secrets.APP_NAME }}
