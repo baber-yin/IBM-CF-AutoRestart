@@ -29,8 +29,14 @@ jobs:
         # IBM_Cloud_CLI/ibmcloud login -u ${{ secrets.ACCOUNT }} -p ${{ secrets.PWD }} -r ${{ secrets.REGION }}
 
 
-    - name: Restart IBM CF
-      run: cf rs ${{ secrets.APP_NAME }}
+    - name: Restart IBM CF 1
+      run: cf rs ${{ secrets.APP_NAME_1 }}
+      
+    - name: Restart IBM CF 2
+      run: cf rs ${{ secrets.APP_NAME_2 }}
+    
+    - name: Restart IBM CF 3
+      run: cf rs ${{ secrets.APP_NAME_3 }}
       
       # run: |
         # IBM_Cloud_CLI/ibmcloud target -g Default
